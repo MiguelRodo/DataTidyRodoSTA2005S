@@ -1,0 +1,9 @@
+---
+title: Create tidy data for 2023 STA2005S assignment
+format:
+  html:
+    embed-resources: true
+---
+
+# Introduction
+
