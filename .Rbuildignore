@@ -5,3 +5,18 @@
 
 ^LICENSE\.md$
 ^README\.Rmd$
+^_tmp
+
+
+^_data_raw
+
+
+^_output
+
+
+^_archive
+
+
+^docs
+
+
