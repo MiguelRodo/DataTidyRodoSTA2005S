@@ -1,3 +1,8 @@
 # Placeholder
 
 Do nothing
+
+```{r}
+load(projr::projr_path_get("data-raw", "data_tidy_yield.rda"))
+usethis::use_data(data_tidy_yield, overwrite = TRUE)
+```
