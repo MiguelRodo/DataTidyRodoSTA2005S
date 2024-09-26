@@ -13,19 +13,56 @@ knitr::opts_chunk$set(
 )
 ```
 
-# DataTidy23RodoSTA2005SAssignment
+# DataTidyRodoSTA2005S
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of DataTidy23RodoSTA2005SAssignment is to create data for the STA2005S regression assignment in 2023.
+The goal of DataTidyRodoSTA2005S is to create data for the STA2005S regression assignment in 2023.
 
 ## Installation
 
-You can install the development version of DataTidy23RodoSTA2005SAssignment like so:
+You can install the development version of DataTidyRodoSTA2005S like so:
 
 ``` r
 if (!requireNamespace("devtools")) install.packages("devtools")
-devtools::install_github("TRUE/DataTidy23RodoSTA2005SAssignment")
+devtools::install_github("TRUE/DataTidyRodoSTA2005S")
 ```
+
+## Data Sets
+
+### Air Quality Dataset (`data_tidy_air_quality`)
+
+This dataset contains measurements of particulate matter and associated environmental variables collected from 150 monitoring stations across various cities in South Africa. It is intended for use in analyzing the factors influencing air quality to inform urban planning and public health strategies.
+
+**Key Features:**
+
+- **particulate_matter**: Fine particulate matter concentration (µg/m³).
+- **traffic_density**: Number of vehicles per hour in the area.
+- **industrial_activity**: Level of industrial activity near the monitoring station.
+- **temperature**: Average ambient temperature (°C).
+- **humidity**: Average relative humidity (%).
+- **wind_speed**: Average wind speed (m/s).
+- **day_of_week**: Day of the week.
+- **holiday**: Whether the day is a public holiday.
+- **urban_greenery**: Percentage of area covered by green spaces.
+
+### Crop Yield Dataset (`data_tidy_yield`)
+
+This dataset contains simulated data on crop yields and various environmental and management factors from 125 farms. It is designed for educational purposes to study the factors affecting crop yields.
+
+**Key Features:**
+
+- **FarmID**: Unique identifier for each farm.
+- **CropYield**: Crop yield in tons per hectare.
+- **Rainfall**: Total rainfall during the growing season (mm).
+- **TempC/TempF**: Average temperature during the growing season in Celsius and Fahrenheit.
+- **Fertilizer**: Type of fertilizer used.
+- **Sunlight**: Average daily sunlight hours.
+- **SoilPH**: Soil pH level.
+- **WindSpeed**: Average wind speed (m/s).
+- **DistanceToWater**: Distance to the nearest water body (km).
+- **Altitude**: Altitude of the farm above sea level (meters).
+- **PesticideApplied**: Whether pesticide was applied.
+- **Irrigation**: Type of irrigation used.
 
