@@ -1,5 +1,5 @@
-Package: DataTidy23RodoSTA2005SAssignment
-Title: Create tidy data for 2023 STA2005S assignment
+Package: DataTidyRodoSTA2005S
+Title: Create tidy data for STA2005S assignments
 Version: 1.2.3
 Authors@R: person("Miguel", "Rodo", , "miguel.rodo@uct.ac.za", role = c("aut", "cre"))
 Maintainer: Miguel Rodo <miguel.rodo@uct.ac.za>
