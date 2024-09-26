@@ -1,5 +1,7 @@
 # CHANGELOG
 
+- Patch (v1.2.1): Miguel Julio Rodo (12:12:41)
+  - Use different release name
 - *Minor* (v1.2.0): Miguel Julio Rodo (12:11:47)
   - Add air quality dataset
 
