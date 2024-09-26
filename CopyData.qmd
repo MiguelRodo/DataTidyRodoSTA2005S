@@ -4,7 +4,7 @@ Do nothing
 
 ```{r}
 load(projr::projr_path_get("data-raw", "data_tidy_yield.rda"))
-usethis::use_data(data_tidy_yield, overwrite = TRUE)
+projr::projr_use_data(data_tidy_yield, overwrite = TRUE)
 load(projr::projr_path_get("data-raw", "data_tidy_air_quality.rda"))
-usethis::use_data(data_tidy_air_quality, overwrite = TRUE)
+projr::projr_use_data(data_tidy_air_quality, overwrite = TRUE)
 ```
