@@ -10,7 +10,7 @@ directories:
 NA: ~
 build:
   github:
-    latest-2023:
+    latest:
       content:
       - data-raw
       - docs

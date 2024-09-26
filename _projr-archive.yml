@@ -1,6 +1,6 @@
 build:
   github:
-    archive-2023:
+    archive:
       content:
       - data-raw
       - docs
