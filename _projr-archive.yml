@@ -2,7 +2,7 @@ build:
   github:
     archive:
       content:
-      - data-raw
+      - raw-data
       - docs
       - output
       send:

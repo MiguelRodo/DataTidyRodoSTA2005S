@@ -1,5 +1,5 @@
 directories:
-  data-raw:
+  raw-data:
     path: _data_raw
   cache:
     path: _tmp
@@ -12,7 +12,7 @@ build:
   github:
     latest:
       content:
-      - data-raw
+      - raw-data
       - docs
       - output
       structure: latest
