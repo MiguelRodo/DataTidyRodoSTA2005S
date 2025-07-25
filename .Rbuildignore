@@ -20,13 +20,26 @@
 
 
 # Start of projr section: do not edit by hand (until `# End of projr section`)
-^_data_raw/
-^_data_raw$
+^_raw_data/
+^_raw_data$
 ^_tmp/
 ^_tmp$
 ^_output/
 ^_output$
 ^docs/
 ^docs$
+^_projr-archive\.yml$
+^_projr\.yml$
+^CopyData\.qmd$
+^README\.Rmd$
+^_dependencies\.R$
+^CHANGELOG\.md$
+^LICENSE\.md$
+^manifest\.csv$
+^README\.html$
+^CopyData_files/
+^CopyData_files$
+^CopyData\.html/
+^CopyData\.html$
 # End of projr section
 

@@ -18,9 +18,12 @@ docs/**/*
 
 
 # Start of projr section: do not edit by hand (until `# End of projr section`)
-_data_raw/**
+_raw_data/**
 _tmp/**
 _output/**
 docs/**
+README.html
+CopyData_files/**
+CopyData.html/**
 # End of projr section
 
