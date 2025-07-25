@@ -1,5 +1,8 @@
 # CHANGELOG
 
+- *Minor* (v1.3.0): Miguel Julio Rodo (2025-07-25 10:01:50)
+  - Build completely for the first time in 2025
+
 - Patch (v1.2.4): Miguel Julio Rodo (12:22:03)
   - Correct package name
 - Patch (v1.2.3): Miguel Julio Rodo (12:19:04)
