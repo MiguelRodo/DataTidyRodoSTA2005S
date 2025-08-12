@@ -1,0 +1,83 @@
+---
+title: "Energy dataset for 2025 STA2005S regression assignment"
+format:
+  html:
+    embed-resources: true
+---
+
+# Energy Consumption Data Preparation
+
+```{r}
+set.seed(2025)
+n <- 150
+
+day_levels <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+
+#| label: data
+# Synthetic but reproducible dataset for the assignment
+set.seed(2025)
+n <- 150
+
+day_levels <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+
+humidity  <- pmin(pmax(rnorm(n, 60, 15), 20), 100)
+humiditidy_13 <- 2 * (humidity - min(humidity)) / (diff(range(humidity))) + 1 # scale to [-1,1]
+outside_temperature <- pmin(pmax(rnorm(n, 20, 5), 5), 35)
+outside_temperature <- outside_temperature * 2/3 + 
+  1 / 3 * diff(range(outside_temperature)) *
+    (humidity - min(humidity)) / (diff(range(humidity))) # scale with humidity
+wind_speed <- rgamma(
+  n,
+  shape = humiditidy_13,
+  scale = 1) + # mean ~3 m/s +
+  2 * humiditidy_13 # scale with humidity
+wind_speed <- 10 * (wind_speed - min(wind_speed)) / (diff(range(wind_speed))) + 1 # scale to [1,10]
+humiditidy_13 <- 2 * (humidity - min(humidity)) / (diff(range(humidity))) + 1 # scale to [-1,1]
+wind_speed <- rgamma(
+  n,
+  shape = humiditidy_13,
+  scale = 1) + # mean ~3 m/s +
+    2 * humiditidy_13 # scale with humidity
+wind_speed <- 10 * (wind_speed - min(wind_speed)) / (diff(range(wind_speed))) + 1 # scale to [1,10]
+household_size <- sample(1:6, n, replace = TRUE, prob = c(0.12,0.22,0.26,0.2,0.13,0.07))
+appliance_index <- pmin(pmax(round(rnorm(n, 50, 15)), 0), 100)
+energy_efficiency <- sample(c("Poor","Average","Good","Excellent"), n, replace = TRUE,
+                                   prob = c(0.2,0.4,0.3,0.1))
+solar_installed <- sample(c("No","Yes"), n, replace = TRUE, prob = c(0.5,0.5))
+day_of_week <- sample(day_levels, n, replace = TRUE)
+holiday <- rbinom(n, 1, 0.05)
+
+# Data-generating model (unknown to students)
+beta0 <- 20
+beta_temp <- -0.0                  # consumption rises as it gets colder
+beta_hum  <-  0.0
+beta_wind <- -0.0
+beta_size <-  0.85
+beta_appl <-  0.03
+beta_int  <- 0                  # temp:humidity interaction
+eff_map <- c("Poor"=0, "Average"=-0.1, "Good"=-0.2, "Excellent"=-0.3)
+solar_eff <- -14
+weekend   <- ifelse(day_of_week %in% c("Saturday","Sunday"), 0.05, 0)
+hol_eff   <- ifelse(holiday == "Yes", 0.1, 0)
+
+mu <- beta0 +
+      beta_temp*(outside_temperature - 20) +
+      beta_hum*(humidity - 60) +
+      beta_wind*wind_speed +
+      beta_size*household_size +
+      beta_appl*(appliance_index - 50)/10 +
+      beta_int*(outside_temperature - 20)*(humidity - 60) +
+      eff_map[as.character(energy_efficiency)] +
+      solar_eff*(solar_installed == "Yes") +
+      weekend + hol_eff
+
+consumption_kwh <- pmax(rnorm(n, mean = mu, sd = 2.5), 0.5)
+
+data_tidy_energy_use <- data.frame(
+  consumption_kwh, outside_temperature, humidity, wind_speed,
+  household_size, appliance_index, energy_efficiency, solar_installed,
+  day_of_week, holiday
+) |>
+  tibble::as_tibble()
+projr::projr_use_data(data_tidy_energy_use, overwrite = TRUE)
+```

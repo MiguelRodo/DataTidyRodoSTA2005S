@@ -22,8 +22,11 @@ _raw_data/**
 _tmp/**
 _output/**
 docs/**
+BUILDLOG.md
 README.html
 CopyData_files/**
 CopyData.html/**
+data_tidy_energy_consumption_files/**
+data_tidy_energy_consumption.html/**
 # End of projr section
 
