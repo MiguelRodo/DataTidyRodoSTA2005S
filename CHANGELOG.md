@@ -1,5 +1,8 @@
 # CHANGELOG
 
+- *Minor* (v1.4.0): Miguel Julio Rodo (2025-08-12 20:34:13)
+  - Add energy dataset
+
 - *Minor* (v1.3.0): Miguel Julio Rodo (2025-07-25 10:01:50)
   - Build completely for the first time in 2025
 
